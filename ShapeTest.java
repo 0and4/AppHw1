@@ -16,18 +16,20 @@ public class ShapeTest {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("수치를 입력하시오 (1개 : 직선, 2개 : 직사각형, 3개 : 직육면체)");
 		String str = sc.nextLine();
-		String[] nums = str.split(" ");
+		String[] nums = str.split(" "); // 입력한 값의 개수에 따라 결과를 다르게 출력
 		Shape s;
-		
-		if (nums.length==1) {
-			s = new Shape(Integer.parseInt(nums[0]));
+		int[] inums = new int[nums.length];
+		for(int i=0;i<nums.length;i++) {
+			inums[i]=Integer.parseInt(nums[i]);
 		}
-		if (nums.length==2) {
-			s = new Shape(Integer.parseInt(nums[0]),Integer.parseInt(nums[1]));
+		if(nums.length==1) {
+			s=new Shape(inums[0]);
 		}
-		if (nums.length==3) {
-			s = new Shape(Integer.parseInt(nums[0]),Integer.parseInt(nums[1]),Integer.parseInt(nums[2]));
+		if(nums.length==2) {
+			s=new Shape(inums[0],inums[1]);
+		}
+		if(nums.length==3) {
+			s=new Shape(inums[0],inums[1],inums[2]);
 		}
 	}
-
 }
