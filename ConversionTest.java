@@ -42,28 +42,26 @@ public class ConversionTest {
 	public static void main(String args[]) {
 		Scanner sc = new Scanner(System.in);
 		Conversion c = new Conversion();
-		c.i = sc.next();
-		c.n = sc.next();
-		if(Integer.parseInt(c.i)==10) {
-			c.num=c.n;
-			c.toBinary(Integer.parseInt(c.n));
-			c.toHex(Integer.parseInt(c.n));
-			c.printNum();
-			c.printBinary();
-			c.printHex();
-		}
-		else if(Integer.parseInt(c.i)==2) {
-			c.bin=c.n;
-			c.binaryToNum(c.n);
-			c.binaryToHex(c.n);
-			c.printNum();
-			c.printBinary();
-			c.printHex();
-		}
-		else if(Integer.parseInt(c.i)==16) {
-			c.hex=c.n;
-			c.hexToBinary(c.n);
-			c.hexToNum(c.n);
+		c.i = sc.next(); //진법 입력
+		c.n = sc.next(); //진법에 해당하는 숫자 입력
+		int i=Integer.parseInt(c.i);
+		int n=Integer.parseInt(c.n);
+		if(i==10 || i==2 || i==16) {
+			if(i==10) {
+				c.num=c.n;
+				c.toBinary(n);
+				c.toHex(n);
+			}
+			else if(i==2) {
+				c.bin=c.n;
+				c.binaryToNum(c.n);
+				c.binaryToHex(c.n);
+			}
+			else if(i==16) {
+				c.hex=c.n;
+				c.hexToBinary(c.n);
+				c.hexToNum(c.n);
+			}
 			c.printNum();
 			c.printBinary();
 			c.printHex();
@@ -72,5 +70,4 @@ public class ConversionTest {
 			System.out.println("진법을 다시 입력하세요.");
 		}
 	}
-
 }
